@@ -1,2 +1,3 @@
 # PWNentaho
-Pentaho Authentication Bypass
+Pentaho Authentication Bypass 
+# [CVE-2021-31602] (https://nvd.nist.gov/vuln/detail/CVE-2021-31602) 
