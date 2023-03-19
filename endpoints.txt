@@ -22,6 +22,8 @@
 /pentaho/api/userrolelist/permission-users
 /pentaho/api/userrolelist/permission-roles
 
+/pentaho/ServiceAction?action=SecurityDetails
+
 /pentaho/api/scheduler/state
 /pentaho/api/scheduler/jobinfotest
 /pentaho/api/scheduler/blockout/blockoutjobs
