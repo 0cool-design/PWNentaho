@@ -32,10 +32,11 @@ class PWNentaho:
                     pass
                     #print(f"Error: Request timed out for endpoint '{endpoint}'.")
                 except requests.exceptions.HTTPError as e:
-                    print(f"Error: {e}")
+                    pass
+                    #print(f"Error: {e}")
 
         except KeyboardInterrupt:
-            print("\nExecution interrupted by user.")
+            print("\nExting.")
 
         finally:
             with open(self.histfile, "w") as f:
